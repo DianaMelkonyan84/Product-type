@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Product</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+            padding: 5px 10px;
+            border: 1px solid #007bff;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+<h2>Add Product</h2>
+<div class="container">
+<form th:action="@{/add-product}" th:object="${product}" method="post" enctype="multipart/form-data">
+    <label>Name: <input type="text" th:field="*{name}" /></label><br>
+    <label>Description: <input type="text" th:field="*{description}" /></label><br>
+    <label>Model Name: <input type="text" th:field="*{modelName}" /></label><br>
+    <label>Quantity: <input type="number" th:field="*{quantity}" /></label><br>
+    <label>Rating: <input type="number" th:field="*{rating}" /></label><br>
+    <label>Overview: <input type="text" th:field="*{overview}" /></label><br>
+     <label>Category: <input type="text" th:field="*{tags}" /></label><br>
+    <label>Image: <input type="file" name="imageFile" /></label><br>
+    <input type="submit" value="Submit" />
+</form>
+</div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/product-details}" th:object="${product}" method="get" enctype="multipart/form-data">
+<!--    <label>Image: <input type="file" name="imageFile" multiple /></label><br>-->
+
+    <input type="text" th:field="*{id}"/>
+  <input type="submit" value="Submit" />
+</form>
+</body>
+</html>
